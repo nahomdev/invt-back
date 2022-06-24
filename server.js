@@ -13,8 +13,11 @@ app.use(express.json());
 app.get('/test',(req, res ,next)=>{
     res.send("test api response");
 })
-
-
+// order_id
+//the order_id from the machine and the order of the other can not be the same it shouldn't work
+//after the order_id confirmed the Observation code must be found and compared so that it should be able to
+//update the result observation then it will be successful
+// 
 
 const port = process.env.EXPRESS_PORT;
 
