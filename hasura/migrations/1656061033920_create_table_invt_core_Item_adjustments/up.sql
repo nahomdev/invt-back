@@ -1,0 +1,2 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE TABLE "invt_core"."Item_adjustments"("inventory_adjustment_id" uuid NOT NULL, "date" date NOT NULL, "reason" text NOT NULL, "reason_id" uuid NOT NULL, "description" text NOT NULL, "reference_number" text NOT NULL, "adjustment_type" text NOT NULL, "line_items" uuid NOT NULL, "total" float8 NOT NULL, "id" uuid NOT NULL DEFAULT gen_random_uuid(), PRIMARY KEY ("id") , UNIQUE ("inventory_adjustment_id"));

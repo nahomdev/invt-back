@@ -1,0 +1,121 @@
+- table:
+    schema: invt_core
+    name: Item_adjustments
+- table:
+    schema: invt_core
+    name: address
+- table:
+    schema: invt_core
+    name: bills
+- table:
+    schema: invt_core
+    name: composite_items
+- table:
+    schema: invt_core
+    name: contact
+  object_relationships:
+    - name: currency
+      using:
+        foreign_key_constraint_on: currency_id
+  array_relationships:
+    - name: contact_people
+      using:
+        foreign_key_constraint_on:
+          column: company_id
+          table:
+            schema: invt_core
+            name: contact_person
+- table:
+    schema: invt_core
+    name: contact_person
+- table:
+    schema: invt_core
+    name: credit_notes
+- table:
+    schema: invt_core
+    name: currency
+- table:
+    schema: invt_core
+    name: customer_payments
+- table:
+    schema: invt_core
+    name: invoices
+- table:
+    schema: invt_core
+    name: item
+  object_relationships:
+    - name: itemGroupByItemGroup
+      using:
+        foreign_key_constraint_on: item_group
+- table:
+    schema: invt_core
+    name: item_group
+  object_relationships:
+    - name: tax
+      using:
+        foreign_key_constraint_on: tax_id
+  array_relationships:
+    - name: items
+      using:
+        foreign_key_constraint_on:
+          column: item_group
+          table:
+            schema: invt_core
+            name: item
+- table:
+    schema: invt_core
+    name: organization
+  array_relationships:
+    - name: addresses
+      using:
+        foreign_key_constraint_on:
+          column: organization
+          table:
+            schema: invt_core
+            name: address
+    - name: contact_people
+      using:
+        foreign_key_constraint_on:
+          column: organization
+          table:
+            schema: invt_core
+            name: contact_person
+- table:
+    schema: invt_core
+    name: packages
+- table:
+    schema: invt_core
+    name: price_lists
+- table:
+    schema: invt_core
+    name: purchase_orders
+- table:
+    schema: invt_core
+    name: purchase_receives
+- table:
+    schema: invt_core
+    name: retainer_invoices
+- table:
+    schema: invt_core
+    name: sales_orders
+- table:
+    schema: invt_core
+    name: sales_returns
+- table:
+    schema: invt_core
+    name: shipment_orders
+- table:
+    schema: invt_core
+    name: taxes
+- table:
+    schema: invt_core
+    name: transfer_orders
+- table:
+    schema: invt_core
+    name: users
+- table:
+    schema: invt_core
+    name: vendor_credits
+- table:
+    schema: invt_core
+    name: warehouse

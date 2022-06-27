@@ -1,0 +1,2 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+CREATE TABLE "invt_core"."contact_person"("id" uuid NOT NULL DEFAULT gen_random_uuid(), "salutation" text NOT NULL, "first_name" text NOT NULL, "last_name" text NOT NULL, "email" text NOT NULL, "phone" text NOT NULL, "mobile" text NOT NULL, "is_primary_contact" boolean NOT NULL, "designation" text NOT NULL, "department" text NOT NULL, "is_added_in_portal" boolean NOT NULL, PRIMARY KEY ("id") );

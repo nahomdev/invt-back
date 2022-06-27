@@ -23,4 +23,4 @@ COPY server.js .
 
 COPY express ./express/
 
-CMD ["yarn", "dev"]
+CMD ["node", "server.js"]
